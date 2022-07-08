@@ -9,9 +9,18 @@ docker-compose up -d
 docker container exec -it cppdev /bin/sh
 ```
 
-* コンテナ内でファイルを実行
+* コンテナ内で単体ファイルを実行
 ```
-cd /cppdev/src
+cd /cppdev/src_day1
 g++ hello.cpp -o hello
 ./hello
+```
+
+* コンテナ内で複数ファイルを分割コンパイルして実行
+```
+cd /cppdev/src_day2
+g++ -c main.cpp -o main.o
+g++ -c sample.cpp -o sample.o
+g++ main.o sample.o
+./a.out
 ```
