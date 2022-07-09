@@ -24,3 +24,9 @@ g++ -c sample.cpp -o sample.o
 g++ main.o sample.o
 ./a.out
 ```
+
+* コンテナ内で複数ファイルを一括コンパイルして実行
+```
+g++ main.cpp sample.cpp -o out
+./out
+```
